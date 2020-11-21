@@ -1,7 +1,7 @@
-import React, {FC} from 'react';
-import Paper from "@material-ui/core/Paper";
 /** @jsx jsx */
 import {jsx, css} from '@emotion/core'
+import React, {FC} from 'react';
+import Paper from "@material-ui/core/Paper";
 import useTheme from "@material-ui/core/styles/useTheme";
 import {Typography} from "@material-ui/core";
 
@@ -15,7 +15,7 @@ export const Footer: FC = () => {
     }
 
     return (
-        <Paper square elevation={1} css={styles.root} component='footer'>
+        <Paper square elevation={8} css={styles.root} component='footer'>
             <Typography align='center' variant='subtitle1'>
                 (C) Copyright {new Date().getFullYear()}
             </Typography>

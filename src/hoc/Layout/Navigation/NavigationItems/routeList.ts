@@ -1,7 +1,10 @@
-export type Route = { link: string, name: string }
+import {Route} from "../../../../types/Route";
+import {QuizPage} from "../../../../pages/QuizPage/QuizPage";
+import {PrizesPage} from "../../../../pages/PrizesPage/PrizesPage";
+import {AboutPage} from "../../../../pages/AboutPage/AboutPage";
 
 export const routeList: Route[] = [
-    {link: '/', name: 'Start'},
-    {link: '/prizes', name: 'Prizes'},
-    {link: '/about', name: 'About'}
+    QuizPage,
+    PrizesPage,
+    AboutPage
 ]

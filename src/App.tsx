@@ -1,27 +1,25 @@
 import React from "react";
 import {Layout} from "./hoc/Layout/Layout";
 import {BrowserRouter, Switch, Route} from "react-router-dom";
-import {StartQuizPage} from "./Pages/StartQuizPage/StartQuizPage";
-import {PrizesPage} from "./Pages/PrizesPage/PrizesPage";
-import {AboutPage} from "./Pages/AboutPage/AboutPage";
+import {routeList} from "./hoc/Layout/Navigation/NavigationItems/routeList";
+import {StylesProvider} from "@material-ui/core";
+import {Theme} from "./hoc/Theme/Theme";
 
 
 export const App = () => {
     return (
         <BrowserRouter>
-            <Layout>
-                <Switch>
-                    <Route path="/" exact>
-                        <StartQuizPage/>
-                    </Route>
-                    <Route path="/prizes" exact>
-                        <PrizesPage/>
-                    </Route>
-                    <Route path="/about" exact>
-                        <AboutPage/>
-                    </Route>
-                </Switch>
-            </Layout>
+            <StylesProvider injectFirst>
+                <Theme>
+                    <Layout>
+                        <Switch>
+                            {routeList.map(route => (
+                                <Route exact key={route.routeName} path={route.routeName} component={route}/>
+                            ))}
+                        </Switch>
+                    </Layout>
+                </Theme>
+            </StylesProvider>
         </BrowserRouter>
     );
 };

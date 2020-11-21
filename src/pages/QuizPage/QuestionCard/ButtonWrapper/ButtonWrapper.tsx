@@ -1,14 +1,9 @@
-import React from 'react';
 /** @jsx jsx */
 import {jsx, css} from '@emotion/core'
+import React from 'react';
 import useTheme from "@material-ui/core/styles/useTheme";
 
-type ButtonWrapperProps = {
-    correct: boolean;
-    userClicked: boolean;
-};
-
-export const ButtonWrapper: React.FC<ButtonWrapperProps> = (props) => {
+export const ButtonWrapper: React.FC = (props) => {
         const theme = useTheme()
         const styles = {
             root: css`

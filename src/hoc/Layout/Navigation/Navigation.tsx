@@ -1,16 +1,16 @@
-import React from "react";
 /** @jsx jsx  */
 import {jsx, css} from "@emotion/core";
+import React, {FC} from "react";
 import {useTheme} from "@material-ui/core";
 import {AppBar, Toolbar, Typography} from "@material-ui/core";
 
 import {NavigationItems} from "./NavigationItems/NavigationItems";
 
-export const Navigation = () => {
+export const Navigation: FC = () => {
     const theme = useTheme();
     const styles = {
         root: css`
-      margin-right: ${theme.spacing(2)} px;
+      margin-right: ${theme.spacing(4)} px;
     `,
         title: css`
       flex-grow: 1;
